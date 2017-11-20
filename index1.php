@@ -82,7 +82,7 @@ if($httpCode == 200) {
                         # Loop thru each item in the list
                         foreach($items as $item) {
                                 echo "<div>";
-                                echo "<!--". $item['ItemID'] . "-->";
+                                echo "<!--". $item['ItemID'] ."-->";
                                 echo '<br>';
                                 echo $item['Description'];
                                 echo '<br>';
@@ -90,7 +90,7 @@ if($httpCode == 200) {
                                 echo '<br>';
                                 echo $item['Priority'];
                                 echo '<br>';
-                                echo $item['IsComplete'];?><br><br><button type="button" class="btn btn-danger">Delete</button>
+                                echo $item['IsComplete'];?><br><br><form action ='deleteitem.php' method='POST'><input type="hidden" value="<?php echo $item['ItemID'];?>" name = "ItemID"/><button type="submit" class="btn btn-danger">Delete</button></form>
                                 <button type="button" class="btn btn-info">Edit</button><?php
                                 echo '</div>';
                                 echo '<hr>';
